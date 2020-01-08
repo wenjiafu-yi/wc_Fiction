@@ -1,0 +1,42 @@
+<view class='search'>
+  <view class='search-box'>
+    <input type="text" confirm-type="搜索" value="{{value}}" placeholder='输入搜索书籍' class='search-input' bindinput="searchBook" bindconfirm="enterSearch" focus="{{focus}}"></input>
+  </view>
+  <!-- 搜索数据 -->
+  <block wx:if="{{list.length}}">
+    <view class='search-item' wx:for="{{list}}" wx:key="index" bindtap="jumpDetail" data-item="{{item.title}}">{{item.title}}</view>
+  </block>
+  <!--历史记录  -->
+  <block wx:else>
+    <view class='search-title' wx:if="{{madomWordList.length}}">
+      <view>搜索热词</view>
+      <view class='search-img'>
+        <image class='search-delete' bindtap="madomHotWord" src="/images/change.png"></image>
+      </view>
+    </view>
+    <view class='search-content'>
+      <view class='search-hot' wx:for="{{madomWordList}}" wx:key="index" bindtap="jumpDetail" data-item="{{item.word}}">
+        {{item.word}}
+      </view>
+    </view>
+    <view class='search-title' wx:if="{{madomRecommendList.length}}">
+      <view>热门推荐</view>
+      <view class='search-img'>
+        <image class='search-delete' bindtap="madomHotRecommend" src="/images/change.png"></image>
+      </view>
+    </view>
+    <view class='search-content'>
+      <view class='search-hot' wx:for="{{madomRecommendList}}" wx:key="index" bindtap="jumpDetail" data-item="{{item.word}}">
+        {{item.word}}
+      </view>
+    </view>
+    <view wx:if="{{searchList.length}}" class='search-title'>
+      <view>搜索历史</view>
+      <view class='search-img' bindtap="deleteHistory">
+        <image class='search-delete' src="/images/search-delete.png"></image>
+      </view>
+    </view>
+    <view class='history-item' wx:for="{{searchList}}" wx:key="index" bindtap="search" data-value="{{item}}">{{item}}</view>
+  </block>
+
+</view>

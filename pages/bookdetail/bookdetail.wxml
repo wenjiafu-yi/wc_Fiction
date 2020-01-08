@@ -1,0 +1,94 @@
+<view class='book-detail'>
+  <!-- 书籍详情 -->
+  <view class='detail-item'>
+    <image class='detail-icon' src="{{list.cover}}"></image>
+    <view class='item-content'>
+      <view class='book-name'>{{list.title}}</view>
+      <view class='book-nums'>
+        <text>{{list.rating.score}}  </text>
+        <view class='book-stars'>
+          <image class="book-star" wx:for="{{list.star}}" wx:key="index" src="/images/star.png"></image>
+        </view>
+        <text>{{list.rating.count}}人评分</text>
+      </view>
+      <view class='book-title'>
+        <text class='book-author'>{{list.author}}</text>
+        <text> | {{list.majorCate}}</text>
+      </view>
+      <view class='book-word'>
+        {{list.wordCount}}万字
+      </view>
+    </view>
+  </view>
+  <view class="book-info">
+    <view class='book-item'>
+      <text class='book-num'>{{list.latelyFollower}}</text>
+      <text class='book-Retain'>追书人气</text>
+    </view>
+    <view class='book-item'>
+      <text class='book-num'>{{list.retentionRatio}}%</text>
+      <text class='book-Retain'>读者留存</text>
+    </view>
+    <view class='book-item'>
+      <text class='book-num'>{{list.serializeWordCount}}</text>
+      <text class='book-Retain'>日更字数</text>
+    </view>
+  </view>
+  <view class='book-short' bindtap="changeState">
+    <view class='book-hot'>简介</view>
+    <text class='book-introduction {{bookOpen?"close-introduction":""}}'>
+{{list.longIntro}}
+  </text>
+  </view>
+  <!-- 热门评论 -->
+  <view class='hot-comment' wx:if="{{commentList.length}}">
+    <view class='commet-title'>热门书评</view>
+    <view class="comment-item" wx:for="{{commentList}}" wx:key="index" bindtap="openComment" data-index="{{index}}">
+      <view class='item-title'>{{item.title}}</view>
+      <view class='item-contents {{item.open?"open-contents":""}}'>{{item.content}}</view>
+      <view class='comment-info'>
+        <view class='comment-author'>
+          <view class="comment-img">
+            <image class='comment-imgs' src="http://statics.zhuishushenqi.com{{item.author.avatar}}"></image>
+          </view>
+          <view class='author-name'>
+            <text class="comment-name">{{item.author.nickname}}</text>
+            <text class="comment-time">{{item.updated}}</text>
+          </view>
+        </view>
+        <view class='comment-help'>
+          <view class='commet-score'>
+            <image class='comment-star' wx:key="index" wx:for="{{item.rating}}" src='/images/star.png'></image>
+          </view>
+          <view class='comment-useful'>{{item.likeCount}}人觉得有用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 猜你喜欢 -->
+  <view class='guess-love' wx:if="{{guessList.length}}">
+    <view class="guess-title">
+      <view class='left-title'>
+        猜你喜欢
+      </view>
+      <view class='right-title' bindtap="allDetail">
+        查看更多
+      </view>
+    </view>
+    <view class='guess-content'>
+      <view class='guess-item' wx:for="{{guessList}}" wx:key="index" data-id="{{item._id}}" bindtap="guessDetail">
+        <image class='guess-img' src="{{item.cover}}"></image>
+        <view class='guess-name'>{{item.title}}</view>
+        <view class='guess-author'>{{item.author}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 占位符 -->
+  <view class='book-place'>
+  </view>
+  <!-- 尾部 -->
+  <view class="read-btn">
+    <view class='begin-read' bindtap="read" data-item="{{list}}">开始阅读</view>
+    <view class='add-shelf' bindtap="addShelf">加入书架</view>
+  </view>
+</view>

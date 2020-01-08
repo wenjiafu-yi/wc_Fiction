@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/shelf/shelf",
+    "pages/home/home",
+    "pages/classify/classify",
+    "pages/search/search",
+    "pages/searchlist/searchlist",
+    "pages/rank/rank",
+    "pages/bookdetail/bookdetail",
+    "pages/guesslist/guesslist",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "usingComponents": {
+    "bookList": "components/booklist/booklist",
+    "loadMore": "components/loadmore/loadmore"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#409EFF",
+    "backgroundColor": "#efefef",
+    "list": [
+      {
+        "pagePath": "pages/shelf/shelf",
+        "text": "书架",
+        "iconPath": "images/tabBar/shelf.png",
+        "selectedIconPath": "images/tabBar/shelfs.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "书城",
+        "iconPath": "images/tabBar/bookcity.png",
+        "selectedIconPath": "images/tabBar/bookcitys.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "images/tabBar/store.png",
+        "selectedIconPath": "images/tabBar/stores.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

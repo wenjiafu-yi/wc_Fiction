@@ -1,0 +1,8 @@
+<view class='left-rank'>
+  <view class="rank-item" wx:for="{{rankInfo.list}}" wx:key="index" data-index="{{index}}" data-id="{{item._id}}" bindtap="changeRank">
+    <text class='{{rankInfo.check === index?"check-border":""}}'>{{item.shortTitle}}</text>
+  </view>
+</view>
+<view class='book-shelf {{rankInfo.check === index?"book-index":"book-hidden"}}' wx:for="{{rankInfo.list}}" wx:key="index">
+  <bookList bindbookDetail="bookDetail" bookList="{{item.bookList}}" />
+</view>

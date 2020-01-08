@@ -1,0 +1,26 @@
+<view class='classify'>
+  <view class='classify-list'>
+    <view class="classify-item {{classifyInfo.check === index?'item-back':''}}" wx:for="{{classifyInfo.list}}" wx:key="index" bindtap="changeNav" data-index="{{index}}">
+      <text class='item-title {{classifyInfo.check === index?"item-check":""}}'>{{item.title}}</text>
+    </view>
+  </view>
+  <view class="classify-content">
+    <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" scroll-into-view="{{toView}}" style="height: 1400rpx">
+      <view class='classify-shelf classify-shelf{{index}}' wx:for="{{classifyInfo.list}}" id="key{{index}}" wx:key="index" wx:if="{{item.bookList}}">
+        <view class='classify-title'>{{item.title}}</view>
+        <view class='book-content'>
+          <view class='book-item' wx:for="{{item.bookList}}" wx:for-item="childList" wx:key="index" bindtap="classifyDetail" data-classify="{{item.value}}" data-title="{{childList.name}}">
+            <view class='book-title'>
+              <text class='book-type'>{{childList.name}}</text>
+              <text class='book-num'>{{childList.bookCount}}本</text>
+            </view>
+            <view class='book-img'>
+              <image class='book-imgs' src="{{item.flag?img:item.defaultCover}}" wx:if="{{imgIndex!==1}}" wx:for-item="img" wx:for-index="imgIndex" wx:for="{{childList.bookCover}}" wx:key="index"></image>
+              <image class='main-img' src="{{item.flag?childList.bookCover[1]:item.defaultCover}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view>
+  <bookList bookList="{{bookList}}" bindbookDetail="bookDetail" />
+  <loadMore loadMore="{{loadmore}}" bindmore="more" />
+</view>

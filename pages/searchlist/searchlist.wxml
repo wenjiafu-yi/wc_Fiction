@@ -1,0 +1,4 @@
+<view class='search-list'>
+  <bookList bindbookDetail="bookDetail" bookList="{{list}}" />
+  <loadMore loadMore="{{loadmore}}" bindmore="more" />
+</view>

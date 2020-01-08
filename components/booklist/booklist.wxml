@@ -1,0 +1,19 @@
+<view class='book-list'>
+  <view class='book-item {{"book"+index}}' wx:for="{{bookList}}" wx:key="index" bindtap="bookDetail" data-id="{{item._id}}">
+    <view class='book-img'>
+      <block wx:if="{{item.cover}}">
+        <image class='book-imgs' src='{{item.flag?item.cover:item.defaultCover}}'></image>
+      </block>
+    </view>
+    <view class='book-info'>
+      <view class='book-name'>{{item.title}}</view>
+      <view class='book-introduction'>{{item.shortIntro}}</view>
+      <view class='book-keep'>
+        <view class='book-popularity'>
+          <text class='book-num'>{{item.latelyFollower}}万</text> 人气</view>
+        <view class='see-book'>
+          <text class="book-num">{{item.retentionRatio}}%</text> 留存</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+<view class="book-shelf" bindtouchstart='start1' bindtouchend='end1'>
+  <block wx:if="{{editFlag}}">
+    <view class='edit-book'>
+      <view bindtap="editBook">取消编辑</view>
+      <view bindtap="submitEdit">删除</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='book-nav'>
+      <view class='book-item' wx:for="{{navInfo.list}}" wx:key="index" bindtap="chnageNav" data-index="{{index}}">
+        <text class='nav-name {{navInfo.check===index?"book-border":""}}'>{{item}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{!navInfo.check}}">
+    <view class='shelf-content {{editFlag?"":"edit-flag"}}'>
+      <block wx:if="{{bookList.length}}">
+        <view class='shelf-item' bindlongpress="longGress" wx:for="{{bookList}}" data-index="{{index}}" wx:key="index" data-item="{{item}}" bindtap="readBook">
+          <block wx:if="{{flag}}">
+            <view class='edit-item {{item.check?"check-edit":""}}' catchtap="check" data-index="{{index}}"></view>
+          </block>
+          <image class='book-img' src="{{item.cover}}"></image>
+          <view class='book-title'>{{item.title}}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='no-book'>
+          <image class='no-img' src='/images/book.png'>
+          </image>
+          暂无书籍
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='shelf-content edit-flag'>
+      <block wx:if="{{historyList.length}}">
+        <view class='shelf-item' wx:for="{{historyList}}" data-index="{{index}}" wx:key="{{item._id}}" data-item="{{item}}" bindtap="readBook">
+          <image class='book-img' src="{{item.cover}}"></image>
+          <view class='book-title'>{{item.title}}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='no-book'>
+          <image class='no-img' src='/images/record.png'>
+          </image>
+          暂无记录
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

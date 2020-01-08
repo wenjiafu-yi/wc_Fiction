@@ -1,0 +1,8 @@
+.load-more {
+  height: 100rpx;
+  width: 100%;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

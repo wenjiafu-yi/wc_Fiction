@@ -1,0 +1,122 @@
+/* pages/shelf/shelf.wxss */
+
+.book-shelf {
+  width: 100%;
+  height: 100%;
+  padding: 0.01rpx;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.edit-book {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  width: 100%;
+  height: 80rpx;
+  font-size: 32rpx;
+  display: flex;
+  padding: 15rpx 70rpx;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 80rpx;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-item {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-name {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 34%;
+  font-size: 30rpx;
+}
+
+.book-border {
+  border-bottom: 4rpx solid red;
+  box-sizing: border-box;
+}
+
+.shelf-content {
+  width: 100%;
+  margin-top: 80rpx;
+  height: auto;
+  display: flex;
+  flex-flow: wrap;
+  align-items: cecnter;
+  padding: 30rpx;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.shelf-item {
+  position: relative;
+  height: 270rpx;
+  width: 33%;
+  text-align: center;
+}
+
+.edit-item {
+  position: absolute;
+  top: 0;
+  left: 14%;
+  height: 212rpx;
+  width: 71%;
+  box-sizing: border-box;
+  background: rgba(209, 204, 204, 0.4);
+}
+
+.check-edit {
+  border: 2rpx solid red;
+}
+
+.book-img {
+  width: 70%;
+  height: 210rpx;
+  border-radius: 5rpx;
+}
+
+.book-title {
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+}
+
+.no-book {
+  font-size: 28rpx;
+  display: flex;
+  flex-flow: column wrap;
+  width: 300rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-img {
+  height: 120rpx;
+  width: 120rpx;
+  margin-bottom: 15rpx;
+}

@@ -1,0 +1,56 @@
+/* pages/rank/rank.wxss */
+
+.rank-list {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.rank-list .rank-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 64rpx;
+  width: 100%;
+  font-size: 26rpx;
+}
+
+.rank-list .rank-items {
+  width: 50%;
+  display: flex;
+  height: 100%;
+  text-align: center;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank-list .rank-line {
+  margin-top: 10rpx;
+  height: 2rpx;
+  width: 50rpx;
+}
+
+.rank-list .rank-title {
+  width: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+}
+
+.rank-list .line-border {
+  border-bottom: 4rpx solid red;
+  box-sizing: border-box;
+}
+
+.rank-list .list-hidden {
+  display: none;
+}
+
+.rank-list .list-content {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,10 @@
+<view class="rank-list">
+  <view class='rank-nav'>
+    <view class='rank-items' wx:for="{{categoryInfo.list}}" wx:key="index">
+      <text class='rank-title {{categoryInfo.check === index?"line-border":""}}' data-index="{{index}}" bindtap="changeTab">{{item.title}}</text>
+    </view>
+  </view>
+  <view class='list-content' data-index="{{index}}" class='{{categoryInfo.check === index?"":"list-hidden"}}' wx:for="{{categoryInfo.list}}" wx:key="index">
+    <list state="{{rankInfo[index]}}" />
+  </view>
+</view>
